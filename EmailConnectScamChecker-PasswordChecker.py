@@ -6,7 +6,7 @@ from email.header import decode_header
 import re
 
 # --- Suspicious Keywords ---
-suspicious_keywords = [  # shortened here for readability — use your full list
+suspicious_keywords = [
     "urgent", "verify", "account", "login", "click", "update", "password", "bank", "invoice", "guaranteed",
     "act now", "card", "payment", "claim", "money back", "suspended", "deactivated", "compromised", "alert", "unusual activity",
     "unauthorized", "limited access", "breach", "flagged", "locked", "secure message", "firewall", "risk", "secure server",
@@ -19,7 +19,20 @@ suspicious_keywords = [  # shortened here for readability — use your full list
     "respond", "act here", "confirm", "complete", "accept", "authorize", "enable", "download", "webmail", "portal", "online notice", "secure-web", "mailhub", "intranet",
     ".ru", ".tk", ".ml", "cloud-storage", "friend request", "reconnect", "see who viewed", "tagged you", "message waiting", "secret",
     "private document", "unknown sender", "gift card", "invitation", "warning", "error", "fail", "mistake", "concern", "trouble",
-    "action required", "immediate attention", "disappointment", "unauthorized use"
+    "action required", "immediate attention", "disappointment", "unauthorized use","identity", "credentials", "logon", "authentication", "security alert", "policy violation",
+    "verify ownership", "terms breach", "compliance required", "device alert", "unrecognized login",
+    "unexpected activity", "security incident", "session expired", "validate now", "temporary hold",
+    "pending action", "take action", "follow instructions", "account review", "malware alert",
+    "virus found", "urgent response", "login attempt", "validate identity", "your details",
+    "next steps", "escalated issue", "action needed", "restore access", "process interrupted",
+    "alert center", "fraud prevention", "privacy issue", "login portal", "recovery steps",
+    "escalation required", "system alert", "detection notice", "pending verification", "forced logout",
+    "credentials at risk", "reactivate", "critical alert", "fail-safe", "system detected",
+    "device flagged", "document expired", "process failure", "irregular activity", "alert system",
+    "attention needed", "access error", "identity confirmation", "system log", "compliance action",
+    "form required", "service alert", "identity token", "security key", "restricted content",
+    "access verification", "form submission", "authentication error", "update required",
+    "network notice", "service change", "continue here", "document required", "re-authenticate"
 ]
 
 # --- Common Passwords ---
@@ -29,8 +42,31 @@ common_passwords = [
     "7777777", "112233", "qwertyuiop", "qazwsx", "password1", "zaq12wsx", "lovely", "sunshine", "welcome1", "master", "login1", "trustno1",
     "letmein1", "admin123", "hello123", "freedom", "whatever", "123qwe", "baseball", "superman", "harley", "batman", "hottie", "flower",
     "shadow", "pokemon", "cheese", "iloveyou1", "asdfgh", "pass123", "monkey123", "access", "michelle", "princess", "secret", "cookie",
-    "blink182", "ninja", "summer", "pepper", "tigger", "jordan23", "hunter", "killer", "soccer", "qwe123", "michael", "charlie", "matrix"
+    "blink182", "ninja", "summer", "pepper", "tigger", "jordan23", "hunter", "killer", "soccer", "qwe123", "michael", "charlie", "matrix", 
+    "andrea", "angela", "anthony", "arizona", "arthur", "austin", "babyboy", "babygirl", "bachelor", "badger",
+    "beagle", "bear123", "beatles", "beauty", "bigred", "billie", "billy", "blazer", "blink", "bobby",
+    "brandon", "brazil", "bulldog", "butterfly", "california", "candy", "carter", "casper", "charles", "cherry",
+    "chester", "chevy", "cinnamon", "claire", "classic", "clover", "colt45", "cookie1", "copper", "coyote",
+    "dakota1", "dancer", "darkness", "daytona", "destiny", "diamond123", "disney", "dolphins", "domino", "donkey",
+    "dragonfly", "dreamer", "dylan", "eclipse", "electric", "emily", "empire", "everest", "explorer", "falcon",
+    "family", "fantasy", "farmer", "fender", "festival", "fireball", "firebird", "fisher", "flamingo", "florida",
+    "flowers", "forest", "forever", "friday", "friendly", "frosty", "garfield", "gemini", "georgia", "gobears",
+    "golfing", "gotham", "green123", "guitar", "haley", "happy1", "harley1", "hawaii", "hazel", "hearts",
+    "herman", "honey", "horsey", "houston", "iceman", "infinity", "ironman", "isabelle", "island", "italy","jacob", 
+    "jasper", "jason1", "jeremy", "jerry", "joanna", "joey123", "johnny", "jonathan", "joseph",
+    "joshua1", "junior", "justine", "karate", "karen", "katherine", "katie", "kennedy", "kenneth", "kevin123",
+    "khalid", "kimberly", "kitten", "kristen", "lacrosse", "larry", "laura", "lawrence", "legend", "lemonade",
+    "leonard", "lexus", "lightning", "lillian", "lincoln", "linda123", "lindsey", "lionel", "lions", "london1",
+    "louise", "lucky1", "lunar", "madison", "magicman", "malibu", "mango", "mariah", "marvin", "maxwell",
+    "meadow", "melanie", "meredith", "metallica", "mexico", "miami", "midwest", "minnie", "miracle", "misty1",
+    "mocha", "monday", "montana", "moose1", "mother", "motorola", "movie123", "musicman", "mybaby", "nashville",
+    "natasha", "neptune", "newcastle", "newyork1", "nicolas", "nintendo", "noah123", "norway", "notebook", "october",
+    "olivia1", "omega", "ontario", "orange1", "orlando", "oscar1", "painter", "panama", "parker", "parrot",
+    "passkey", "passlock", "patrick1", "penguin1", "peppermint", "phoebe", "phoenix1", "picasso", "pilot123", "pirate",
+    "planet1", "platinum", "pluto123", "popcorn", "precious", "presley", "pretty1", "princess1", "puzzle1", "python123"
 ]
+
+
 
 # --- Logic ---
 def check_password_strength(password):
