@@ -1,2 +1,5 @@
-This is the MAIN branch.
-Create separate branch for all different aspects (ex. Password Checker branch or DNS blocker branch)
+Description:
+Website blocker will take in input of which website to block from user. Then it will open the host file in read mode. After that it will iterate through every line and see whether the website the user entered is already there. If it is not then it will then open the file in write mode and add a line correlating it to the host ip address which will spoof the web browser into thinking that the host is running the website when it actually isnt so the website will not load. If it already exists it will display a message saying that it is already blocked and to enter a different website. After the user is done using the website blocker it will close the host file.
+
+Developer Notes:
+Im stupid and I have an error within the first 2 lines of code💀🙏
