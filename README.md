@@ -1,2 +1,2 @@
-This is the MAIN branch.
-Create separate branch for all different aspects (ex. Password Checker branch or DNS blocker branch)
+This is the MAIN Branch
+Once done with your part of the work, open a pull request into this branch so the final code is in one place
