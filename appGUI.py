@@ -15,10 +15,12 @@ tabs.add(checker_tab, text="Password / Scam Checker")
 ttk.Label(checker_tab, text="placeholder").pack(pady=10)
 
 # === Website Blocker Tab ===
-blocker_tab = tk.Frame(tabs)
+blocker_tab = ttk.Frame(tabs)
 tabs.add(blocker_tab, text="Website Blocker")
 
-button_frame = tk.Frame(blocker_tab)
+ttk.Label(blocker_tab, text="Select block or unblock:").pack(pady=10)
+
+button_frame = ttk.Frame(blocker_tab)
 button_frame.pack(pady=10)
 selected = tk.StringVar(value="")
 ttk.Radiobutton(button_frame, text="Block", variable=selected, value="Y").pack(side="left", padx=5)
