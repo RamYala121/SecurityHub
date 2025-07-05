@@ -27,4 +27,5 @@ ttk.Radiobutton(button_frame, text="Block", variable=selected, value="Y").pack(s
 ttk.Radiobutton(button_frame, text="Unblock", variable=selected, value="N").pack(side="left", padx=5)
 
 ttk.Label(blocker_tab, text="Enter Website URL (without the www.):").pack(pady=10)
+ttk.Entry(blocker_tab, placeholder="Website URL").pack(pady=5)
 app.mainloop()
