@@ -18,5 +18,8 @@ ttk.Label(checker_tab, text="placeholder").pack(pady=10)
 blocker_tab = tk.Frame(tabs)
 tabs.add(blocker_tab, text="Website Blocker")
 
-ttk.Combobox(blocker_tab, values=["Y","N"]).pack(pady=10)
+ttk.Radiobutton(blocker_tab, text="Block").pack(pady=20)
+ttk.Radiobutton(blocker_tab, text="Unblock").pack(pady=20)
+
+ttk.Label(blocker_tab, text="Enter Website URL (without the www.):").pack(pady=10)
 app.mainloop()
