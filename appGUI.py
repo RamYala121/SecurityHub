@@ -41,10 +41,10 @@ def toggle():
     global is_on
     is_on = not is_on
     if is_on:
-        toggle_btn.config(text="ON", bg="green")
+        toggle_btn.config(text="ON")
     else:
-        toggle_btn.config(text="OFF", bg="red")
+        toggle_btn.config(text="OFF")
 
-toggle_btn = tk.Button(firewall_tab, text="OFF", width=10, bg="red", command=toggle)
+toggle_btn = ttk.Button(firewall_tab, text="OFF", width=10, command=toggle)
 toggle_btn.pack(pady=80)
 app.mainloop()
