@@ -86,7 +86,7 @@ def block_handler():
     elif result == "already_blocked":
         messagebox.showinfo("Already Blocked", "This website has already been blocked.")
     elif result == "not_blocked":
-        messagebox.showinfo("Not currently block", "This website is not currently blocked.")
+        messagebox.showinfo("Not currently blocked", "This website is not currently blocked.")
     
 
 
